@@ -14,11 +14,11 @@ def download_video(url):
 
     if download == 'y':
         # filter streams for 1080p progressive MP4
-        stream_1080p = yt.streams.filter(progressive=True, file_extension='mp4', resolution="1080p").first()
+        stream_720p = yt.streams.filter(progressive=True, file_extension='mp4', resolution="720p").first()
 
-        if stream_1080p:
+        if stream_720p:
             print("Found a suitable stream, downloading...")
-            stream_1080p.download()
+            stream_720p.download()
 
             print("\nVideo downloaded successfully")
         else:
